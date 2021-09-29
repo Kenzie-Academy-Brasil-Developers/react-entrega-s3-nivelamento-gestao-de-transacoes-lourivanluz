@@ -9,9 +9,9 @@ export const Form = ({
   movimentacoes,
   setMovimentacoes,
 }) => {
-  const [name, setName] = useState([""]);
-  const [quantity, setQuantity] = useState([""]);
-  const [price, setPrice] = useState([""]);
+  const [name, setName] = useState("");
+  const [quantity, setQuantity] = useState("");
+  const [price, setPrice] = useState("");
 
   const addFruit = (fruta) => {
     setFrutaEntrada([...frutaEntrada, fruta]);
