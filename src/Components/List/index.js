@@ -6,8 +6,8 @@ export const List = ({ list, name }) => {
     <DivStyled>
       <h1>{name}</h1>
       <ul>
-        {list.map((item, index) => (
-          <li key={index}>
+        {list.map((item, indes) => (
+          <li key={indes}>
             <CardFrutas item={item} />
           </li>
         ))}
