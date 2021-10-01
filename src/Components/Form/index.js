@@ -1,4 +1,4 @@
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import { DivStyled } from "./sytle";
 
 export const Form = ({
@@ -46,12 +46,8 @@ export const Form = ({
         value={price}
         onChange={(event) => setPrice(event.target.value)}
       />
-      <button onClick={() => addFruit(constroiFruta(name, quantity, price))}>
-        entrada
-      </button>
-      <button onClick={() => rmvFruit(constroiFruta(name, quantity, price))}>
-        saida
-      </button>
+      <button onClick={() => addFruit(constroiFruta("name"))}>entrada</button>
+      <button onClick={() => rmvFruit(constroiFruta("name"))}>saida</button>
     </DivStyled>
   );
 };

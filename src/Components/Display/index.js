@@ -15,6 +15,8 @@ export const Display = () => {
     0
   );
 
+  console.log(valorSaida);
+
   return (
     <div>
       {frutaSaida && <p>{valorSaida}</p>}
