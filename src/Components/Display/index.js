@@ -6,20 +6,26 @@ export const Display = () => {
   const [frutaEntrada, setFrutaEntrada] = useState([]);
   const [frutaSaida, setFrutaSaida] = useState([]);
   const [movimentacoes, setMovimentacoes] = useState([]);
-
   const [showEntrada, setShowEntrada] = useState(false);
 
-  const valorSaida = frutaSaida.reduce(
-    //nao sei se o preço ta unitario ou é total
+  const totalFrutaEntrada = frutaEntrada.reduce(
     (acc, item) => acc + Number(item.price) * Number(item.quantity),
     0
   );
 
-  console.log(valorSaida);
+  const totalFrutaSaida = frutaSaida.reduce(
+    (acc, item) => acc + Number(item.price) * Number(item.quantity),
+    0
+  );
 
   return (
     <div>
-      {frutaSaida && <p>{valorSaida}</p>}
+      {showEntrada && (
+        <p>Valor total das frutas de entrada : {totalFrutaEntrada}</p>
+      )}
+      {!showEntrada && (
+        <p>Valor total das frutas de saida : {totalFrutaSaida}</p>
+      )}
 
       <Form
         frutaEntrada={frutaEntrada}

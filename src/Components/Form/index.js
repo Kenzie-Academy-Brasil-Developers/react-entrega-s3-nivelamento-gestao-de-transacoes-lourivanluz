@@ -14,6 +14,7 @@ export const Form = ({
   const [price, setPrice] = useState("");
 
   const addFruit = (fruta) => {
+    console.log(fruta);
     setFrutaEntrada([...frutaEntrada, fruta]);
     setMovimentacoes([...movimentacoes, fruta]);
   };
@@ -46,8 +47,12 @@ export const Form = ({
         value={price}
         onChange={(event) => setPrice(event.target.value)}
       />
-      <button onClick={() => addFruit(constroiFruta("name"))}>entrada</button>
-      <button onClick={() => rmvFruit(constroiFruta("name"))}>saida</button>
+      <button onClick={() => addFruit(constroiFruta(name, quantity, price))}>
+        entrada
+      </button>
+      <button onClick={() => rmvFruit(constroiFruta(name, quantity, price))}>
+        saida
+      </button>
     </DivStyled>
   );
 };
